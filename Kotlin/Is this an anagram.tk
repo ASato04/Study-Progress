@@ -1,0 +1,33 @@
+var anagramPhrase = "is this an anagram ?"
+var listForTheWords = mutableListOf<String>()
+fun main (){
+    println(anagramPhrase)
+    while (anagramPhrase.isNotEmpty()){
+        val spaceLocation = anagramPhrase.indexOf(' ')
+        if (spaceLocation != -1){
+            listForTheWords.add(anagramPhrase.slice(0 .. spaceLocation-1))
+        	anagramPhrase = anagramPhrase.slice(spaceLocation +1 until anagramPhrase.length)
+            
+       	}else{
+            listForTheWords.add(anagramPhrase)
+            anagramPhrase = ""
+        }
+    }
+    var y= 0
+    
+    for (word in listForTheWords){
+        
+        var characters = listForTheWords[y].toList()
+        characters=characters.shuffled()
+        val x=characters.joinToString("")
+        y+=1
+        print(" $x")
+        
+    }
+
+}
+
+/*personal notes: This was harder than I expected... Kotlin really is different from Python... and even Python,
+ it's been a while since I don't code in it...  
+ I truly don't know if it is an anagram... if it doesn't have a meaning is it still an anagram?
+ */
