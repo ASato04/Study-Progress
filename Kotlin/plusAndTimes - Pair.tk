@@ -1,0 +1,15 @@
+fun plusAndTimes (x:Number,y:Number): Pair<Float,Float> {
+    val xx = x.toFloat()
+    val yy = y.toFloat()
+    return Pair(xx+yy,xx*yy)
+    
+    
+}
+
+fun main(){
+    val number1 = 5
+    val number2 = 7
+    val plus = (plusAndTimes(number1,number2)).first
+    val times = (plusAndTimes(number1,number2)).second
+    println("$plus $times")
+}
