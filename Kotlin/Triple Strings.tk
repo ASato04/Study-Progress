@@ -1,0 +1,17 @@
+fun formatting (strings: Triple<String,String,String>): Triple<String,String,String> {
+    val titleFormat = strings.third.split(" ").joinToString(" "){it.replaceFirstChar{char -> char.uppercase()}
+    }
+    
+    val formatedStrings = Triple(strings.first.uppercase(),
+                                 strings.second.lowercase(),
+                                 titleFormat)
+   
+    return formatedStrings
+}
+
+fun main (){
+    val inputStrings = Triple<String,String,String>("Hello, World!","Olá, Mundo!","Bonjour, le monde !")
+    println(formatting(inputStrings))
+    val ohGod = Triple<String,String,String>("Declarative programming","is sooooooo","ridiculously hard ;-;")
+    println(formatting(ohGod))
+}
