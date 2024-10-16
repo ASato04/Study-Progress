@@ -1,0 +1,9 @@
+fun plus(x:Int):((Int)->Int){
+    return {y:Int->y+x}
+}
+
+fun main(){
+    val x = plus(5)
+    val y = x(5)
+    println(y)
+}
