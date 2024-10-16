@@ -1,0 +1,19 @@
+fun <A,B,C> ((A)->B).compose(other:(B)->C):(A)->C{
+    return{x:A->other(this(x))}
+}
+
+fun transform(x:Pair<String,String>):Pair<Float,Float>{
+    return Pair(x.first.toFloat(),x.second.toFloat())
+}
+
+fun operations(x:Pair<Float,Float>):Triple<Float,Float,Float>{
+    return Triple(x.first+x.second,x.first*x.second,x.first/x.second)
+}
+
+fun main(){
+    val x = Pair(readln(), readln())
+    val y = ::transform.compose (::operations)
+    println(transform(x))
+    println(y(x))
+
+}
