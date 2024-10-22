@@ -22,3 +22,4 @@ fun main (){
     x.forEach { (product, price) ->
         println("Produto: $product, Preço: $price")
     }}
+
